@@ -15,10 +15,12 @@ using OpenFlow flow rules installed by Ryu controller.
 
 ## Topology
 
+```
 h1 ─┐
      ├── S1 ─── S2 ─── h3
 h2 ─┘         │
               └── h4
+```
 
 IPs:
 h1 → 10.0.0.1  
