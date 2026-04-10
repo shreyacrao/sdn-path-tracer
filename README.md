@@ -14,10 +14,19 @@ using OpenFlow flow rules installed by Ryu controller.
 - Validate using ping and iperf tests
 
 ## Topology
-h1(10.0.0.1) ──┐
-h2(10.0.0.2) ──┤ S1 ──── S2 ├── h3(10.0.0.3)
-└────────────┘   h4(10.0.0.4)
-2 switches, 4 hosts, connected to Ryu controller
+
+h1 ─┐
+     ├── S1 ─── S2 ─── h3
+h2 ─┘         │
+              └── h4
+
+IPs:
+h1 → 10.0.0.1  
+h2 → 10.0.0.2  
+h3 → 10.0.0.3  
+h4 → 10.0.0.4  
+
+2 switches, 4 hosts, controlled by Ryu controller
 
 ## Requirements
 - Ubuntu 20.04/22.04
@@ -139,9 +148,11 @@ Hop 2: Switch dpid=2 | in=1 out=2 | ICMP
 
 ### 13. show_path.py h1→h3
 ![Path Trace](screenshots/show_path.png)
+![Path Trace](screenshots/show_path2.png)
 
 ### 14. Clean Exit
 ![Exit](screenshots/clean_exit.png)
+![Exit](screenshots/clean_exit2.png)
 
 ## SDN Concepts Demonstrated
 - **Controller-Switch Interaction:** Ryu handles packet_in events
